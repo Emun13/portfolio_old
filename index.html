@@ -1,21 +1,188 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>index</title>
+<title>Mohammed Emun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="stylesheet.css">
 
-<style type="text/css">
+<style>
 	body {
-    	background-color: #000000;
+        background-color: #000000;
+    }
+
+	.bg {
+	  /* The image used */
+	  /*background-image: url("home1.jpg");*/
+	  /* Full height */
+	  height: 100%; 
+	  width: 100%;
+	  /* Background image is centered vertically and horizontally at all times */
+	  background-position: center center;
+	  /* Background image doesn't tile */
+	  background-repeat: no-repeat;
+	  /* Background image is fixed in the viewport so that it doesn't move when 
+	     the content's height is greater than the image's height */
+	  /* background-attachment: fixed;*/
+	  /* This is what makes the background image rescale based
+	     on the container's size */
+	  background-size: cover;
+	  /* Set a background color that will be displayed
+	     while the background image is loading */
+	  background-color: #000;
+	  position: relative;
 	}
+
+    @media screen and (max-width: 1100px) { 
+        .topnav a:not(:nth-last-child(4)) {display: none;}
+        .topnav a.icon {
+            float: left;
+            display: block;
+            right: 40px;
+            color: #ffffff;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        .topnav.responsive {position: relative; padding-bottom: 20px;}
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #ffffff;
+        }
+        .topnav.responsive a {
+            float: none;
+            text-align: left;
+            display: block;
+        }
+    }
+
+
+
 </style>
 </head>
-
 <body>
 
-</body>	
+	<div class="topnav" id="myTopnav" style="z-index: 10; position: relative;">
+		<a class="active" href="index.html">Home</a>
+		<a id="projects" href="projects.html" class="underline" style="left: 7px">Projects</a>
+	    <a id="contact" href="contact.html" class="underline" style="left: 6px">Contact</a>
+	    <!-- <a id="projects" href="projects.html" class="underline" style="left: 7px">Projects</a> -->
+	    <a href="javascript:void(0);" class="icon" onclick="clicked_icon()">
+	        <i class="fa fa-bars"></i>
+	    </a>
+	</div>
 
-<script language="javascript">
 
+	<div class="bg" style="top: -82px; z-index: 0; background-image: url(home3.jpg);">
+
+		<div class="tagline">
+			<h1 style="text-align: center; color: #ffffff; font-size: 7vw; margin-bottom: -2vw; margin-top: 2vw">Hi, I'm Emun</h1>
+			<h1 style="text-align: center; color: #ffffff; font-size: 5vw;">A Full Stack Developer</h1>
+
+			<div style="position: relative; top: 70px">
+				<div class="wrap">
+				  <button id="more" class="button1">LEARN MORE</button>
+				</div>
+			</div>
+
+		</div>
+	</div> 
+	
+	<div id="secondpg" class="bg" style="top: -82px; background-image: url(home4.jpg);">
+		<img src="Emun1.png" alt="Picture of Emun" id="Emun1" style="position: relative; transform: scaleX(-1); top: 310px; left: 30px">
+		<p class="bubble1 speech1" id="Speech_bubble1" style="top: -350px; left: -30px">I'm a senior at Tufts University majoring in Computer Science and Cognitive
+		and Brain Science. CBS is an interdisciplinary major that is a combination of Computer Science, Philosophy, & Psychology.</p>
+		<p class="bubble2 speech2" id="Speech_bubble2" style="top: -345px; color: #fff; left: 100px">I love doing both front and backend work. I have done lots of work in the field of AR and Education, so I also have an indepth knowledge of languages such as Python, Javascript, C++, and many more. Check out the <a href="projects.html" style="color: #00daff; font-family: Monaco;"><b>Projects</b></a> page to find out about some of my work!</p>
+	</div>
+
+<script>
+	$("#more").click(function() { 
+		document.getElementById("more").disabled = true;
+	    $('html,body').animate({
+	        scrollTop: $("#secondpg").offset().top},
+	        1100);
+	    	document.getElementById("more").disabled = false;
+	});
 </script>
 
+
+<script>
+	var icon_clicked; 
+
+	function clicked_icon() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+	    x.className += " responsive";
+	    document.getElementById("myTopnav").style.background = "#ffffff";
+	    icon_clicked = true;
+	  } 
+	  else {
+	    x.className = "topnav";
+	    icon_clicked = false;
+	  }
+	}
+
+	function checkscreen() {
+		setInterval(function(){
+			// alert(window.innerWidth); 
+			if (window.innerWidth < 1100) {
+				document.getElementById("contact").style.color = "#000000";
+				document.getElementById("projects").style.color = "#000000";
+				if (icon_clicked) {
+					document.getElementById("myTopnav").style.background = "#ffffff";
+				}
+				else {
+					document.getElementById("myTopnav").style.background = "none";
+				}
+			}
+			else {
+				document.getElementById("contact").style.color = "#ffffff";
+				document.getElementById("projects").style.color = "#ffffff";
+				document.getElementById("myTopnav").style.background = "none";
+			}
+			// Used for speech bubbles 
+			if (window.innerWidth < 832) {
+				document.getElementById("Speech_bubble1").style.left = "10px";
+				document.getElementById("Speech_bubble1").style.width = "40vw";
+				document.getElementById("Speech_bubble1").style.fontSize = "90%";
+				document.getElementById("Speech_bubble1").style.top = "-390px";
+				document.getElementById("Speech_bubble1").style.lineHeight = "1.5em";
+
+				document.getElementById("Speech_bubble2").style.left = "90px";
+				document.getElementById("Speech_bubble2").style.width = "45vw";
+				document.getElementById("Speech_bubble2").style.fontSize = "90%";
+				document.getElementById("Speech_bubble2").style.top = "-415px";
+				document.getElementById("Speech_bubble2").style.lineHeight = "1.5em";
+
+				document.getElementById("Emun1").style.left = "0px";
+			}
+			else {
+				document.getElementById("Speech_bubble1").style.left = "-30px";
+				document.getElementById("Speech_bubble1").style.width = "40%";
+				document.getElementById("Speech_bubble1").style.fontSize = "large";
+				document.getElementById("Speech_bubble1").style.top = "-350px";
+				document.getElementById("Speech_bubble1").style.lineHeight = "1.4em";
+
+				document.getElementById("Speech_bubble2").style.left = "100";
+				document.getElementById("Speech_bubble2").style.width = "40%";
+				document.getElementById("Speech_bubble2").style.fontSize = "large";
+				document.getElementById("Speech_bubble2").style.top = "-345px";
+				document.getElementById("Speech_bubble2").style.lineHeight = "1.4em";
+
+
+				document.getElementById("Emun1").style.left = "30px";
+			}
+
+		}, 50);
+	}
+
+	checkscreen();
+</script>
+
+
+</body>
 </html>

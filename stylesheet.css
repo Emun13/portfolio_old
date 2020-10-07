@@ -1,0 +1,243 @@
+body, html {
+		height: 100%;
+		margin: 0;
+	  	font-family: Arial, Helvetica, sans-serif;
+	}
+
+.topnav {
+	  overflow: hidden;
+	  z-index: 10;
+	}
+
+.topnav a {
+	float: right;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+	/*padding: 14px 16px;*/
+	text-decoration: none;
+	font-size: 17px;
+	margin-right: 35px;
+	margin-left: 35px;
+	margin-top: 30px;
+	letter-spacing: 0.15em;
+	display: block;
+	position: relative;
+	padding: 15px 30px;
+}
+
+.active {
+	background-color: #000000/*#ff5f54*/;
+	border-radius: 40px;
+	border: 1px solid #ffffff;
+	color: #ffffff !important;
+	padding-right: 35px !important;
+	padding-left: 35px !important;
+}
+	
+.inactive {
+	background-color: #f5f5f5;
+	border-radius: 40px;
+	/*color: #ffffff !important;*/
+	padding-right: 35px !important;
+	padding-left: 35px !important;
+}
+
+.topnav .icon {
+display: none;
+}
+
+a.underline
+{
+position: relative;
+}
+
+a.underline:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #ff5f54;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out;
+	}
+
+a.underline:hover:before {
+	visibility: visible;
+	transform: scaleX(1);
+}
+
+/*@media screen and (max-width: 1100px) {
+	.topnav a:not(:nth-last-child(4)) {display: none;}
+	.topnav a.icon {
+		float: left;
+		display: block;
+		right: 40px;
+		color: #ffffff;
+	}
+}*/
+
+/*@media screen and (max-width: 1100px) {
+	.topnav.responsive {position: relative; padding-bottom: 20px;}
+	.topnav.responsive .icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		color: #ffffff;
+	}
+	.topnav.responsive a {
+		float: none;
+		text-align: left;
+		display: block;
+	}
+}*/
+
+.tagline {
+	background-color: rgb(0,0,0, .5);
+	z-index: 10;
+	width: 100%;
+	top: 180px;
+	height: 20vw;
+	position: absolute;
+}
+
+.wrap {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button1 {
+	min-width: 300px;
+	min-height: 60px;
+	font-size: 22px;
+	letter-spacing: 1.3px;
+	font-weight: 0;
+	color: #FFFFFF;
+	background: linear-gradient(15deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+	border: none;
+	border-radius: 1000px;
+	box-shadow: 12px 12px 70px rgb(255,48,47,.6);
+	transition: all 0.4s ease-in-out 0s;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	padding: 10px;
+}
+
+.button1::before {
+	content: '';
+	border-radius: 1000px;
+	min-width: calc(300px + 12px);
+	min-height: calc(60px + 12px);
+	border: 6px solid rgb(255,255,255,1);
+	box-shadow: 0 0 180px rgb(104,0,255,.6);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: all .3s ease-in-out 0s;
+}
+
+.button1:hover, .button1:focus {
+	color: #e2e2e2;
+	transform: translateY(-16px);
+}
+
+p.bubble1 {
+	position: relative;
+	width: 40%;
+	text-align: center;
+	line-height: 1.4em;
+	margin: 40px auto;
+	background-color: #ebebeb;
+	border: 6px solid #000;
+	border-radius: 30px;
+	padding: 20px;
+	font-size: large;
+}
+
+p.bubble1:before,
+p.bubble1:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+p.speech1:before {
+	left: 30px;
+	bottom: -50px;
+	border: 25px solid;
+	border-color: #000 transparent transparent #000;
+}
+
+p.speech1:after {
+	left: 38px;
+	bottom: -30px;
+	border: 15px solid;
+	border-color: #ebebeb transparent transparent #ebebeb;
+}
+
+p.bubble2 {
+	position: relative;
+	width: 40%;
+	text-align: center;
+	line-height: 1.4em;
+	margin: 40px auto;
+	background-color: #373737;
+	border: 6px solid #000;
+	border-radius: 30px;
+	padding: 20px;
+	font-size: large;
+}
+p.bubble2:before,
+p.bubble2:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+p.speech2:before {
+	left: 30px;
+	bottom: -50px;
+	border: 25px solid;
+	border-color: #000 transparent transparent #000;
+}
+
+p.speech2:after {
+	left: 38px;
+	bottom: -30px;
+	border: 15px solid;
+	border-color: #373737 transparent transparent #373737;
+}
+
+
+
+::-webkit-scrollbar {
+        width: 10px;
+    }
+
+/* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+    }
+
+/* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.5); 
+        border-radius: 10px;
+    }
+
+/* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,1); 
+    }
+

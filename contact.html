@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mohammed Emun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="stylesheet.css">
+
+<style>
+  body {
+        background-color: #000000;
+    }
+
+  .bg {
+    /* The image used */
+    /*background-image: url("home1.jpg");*/
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+    /* Background image is fixed in the viewport so that it doesn't move when 
+       the content's height is greater than the image's height */
+    /* background-attachment: fixed;*/
+    /* This is what makes the background image rescale based
+       on the container's size */
+    background-size: cover;
+    /* Set a background color that will be displayed
+       while the background image is loading */
+    background-color: #000;
+    position: relative;
+  }
+
+    @media screen and (max-width: 1200px) { 
+        .topnav a:not(:nth-last-child(2)) {display: none;}
+        .topnav a.icon {
+            float: left;
+            display: block;
+            right: 40px;
+            color: #ffffff;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .topnav.responsive {position: relative; padding-bottom: 20px;}
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 162px;
+            color: #ffffff;
+        }
+        .topnav.responsive a {
+            float: none;
+            text-align: left;
+            display: block;
+        }
+    }
+
+
+.tagline2 {
+  background-color: rgb(255, 246, 234, .8);
+  z-index: 10;
+  width: 100%;
+  top: 150px;
+  height: 31vw;
+  position: absolute;
+}
+
+h1.name {
+  text-align: center; 
+  color: #000; 
+  font-size: 5vw; 
+  margin-bottom: -2vw; 
+  margin-top: 2vw; 
+  margin-left: 46vw; 
+  border-bottom: 2px solid #000; 
+  /*border-bottom-width: 1px;*/
+  width: 50%;
+}
+p.text {
+  color: #000; font-size: 1.5vw;
+  text-align: center;
+  margin-left: 40vw;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav" style="z-index: 10; position: relative; right: 0px;">
+    <a id="home" href="index.html" class="underline" style="left: 7px;">Home</a>
+    <a id="projects" href="projects.html" class="underline" style="left: 7px">Projects</a>
+    <a class="active" href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="clicked_icon()">
+          <i class="fa fa-bars"></i>
+      </a>
+</div>
+
+
+<div class="bg" style="top: -82px; z-index: 0; background-image: url(contacts2.jpg);">
+  
+  <div class="tagline2">
+    <h1 class="name">Mohammed Emun</h1>
+    <div class="container">
+      <p class="text" style="margin-top: 6vw;"><b>School Email:</b> <a href="mailto: mohammed.emun@tufts.edu">mohammed.emun@tufts.edu</a></p>
+      <p class="text"><b>Personal Email:</b> <a href="mailto: mohammed.emun@tufts.edu">mohammedemun909@gmail.com</a></p>
+      <p class="text"><b>Cell Phone:</b> 215-730-3630</p>
+      <p class="text"><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/mohammed-emun-224b59139/" target="_blank" rel="noopener noreferrer">Mohammed Emun</a></p>
+      <p class="text"><b>Github:</b> <a href="https://github.com/Emun13" target="_blank" rel="noopener noreferrer">Emun13</a></p>
+    </div>  
+  </div>
+
+
+  <!-- <div class="box">
+    <div class='column'>
+            <div>Mohammed Emun</div>
+            <div style="position: relative; top: 140px; background-color: rgba(255,255,255,.8); height: 450px">&nbsp</div>
+    </div>
+  </div> -->
+
+</div>
+
+    
+  
+
+
+<script>
+  var icon_clicked; 
+
+  function clicked_icon() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+      document.getElementById("myTopnav").style.background = "#ffffff";
+      icon_clicked = true;
+    } 
+    else {
+      x.className = "topnav";
+      icon_clicked = false;
+    }
+  }
+
+  function checkscreen() {
+    setInterval(function(){
+      // alert(window.innerWidth); 
+      if (window.innerWidth < 1100) {
+        document.getElementById("projects").style.color = "#000000";
+        document.getElementById("home").style.color = "#000000";
+        if (icon_clicked) {
+          document.getElementById("myTopnav").style.background = "#ffffff";
+        }
+        else {
+          document.getElementById("myTopnav").style.background = "none";
+        }
+      }
+      else {
+        document.getElementById("projects").style.color = "#ffffff";
+        document.getElementById("home").style.color = "#ffffff";
+        document.getElementById("myTopnav").style.background = "none";
+      }
+    }, 50);
+  }
+
+  checkscreen();
+</script>
+
+
+</body>
+</html>
